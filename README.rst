@@ -49,7 +49,7 @@ URL
 ===
 .. code-block:: python
 
-    POST: https://divineapi.com/api/1.0/get_daily_horoscope.php
+    POST: https://divineapi.com/api/1.0/get_daily_tarot.php
 
 
 Parameters
@@ -59,56 +59,38 @@ api_key :
    Your API  KEY.
    
    
-sign : 
-   Name of the sign.
-
-   List of all signs - aries, taurus, gemini, cancer, leo, virgo, libra, scorpio, sagittarius, capricorn, aquarius and pisces.
-
-
-date : 
-   Current Date in Y-m-d Format (Ex: 2020-12-25)
-   
-   Date can be today,tomorrow or yesterday
 
 
 Result Example:
 =====
-.. code-block:: text
+.. code-block:: json
 
-    {
-        "success": 1,
-        "message": "Prediction data.",
-        "data": {
-            "sign": "ARIES",
-            "prediction": {
-                "personal": "Personal Life",
-                "health": "Health",
-                "profession": "Profession",
-                "emotions": "Emotions",
-                "travel": "Travel",
-                "luck": [
-                    "Colors of the day – Green, Pink",
-                    "Lucky Numbers of the day – 5, 9",
-                    "Lucky Alphabets you will be in sync with – B, D",
-                    "Cosmic Tip – Opinions do not define you.",
-                    "Tips for singles – Take pride in being perfectly imperfect. ",
-                    "Tips for couples – It is already yours, try to maintain that."
-                ]
-            }
-        }
-    }
+
+      {
+          "success": 1,
+          "message": "Daily Tarot result.",
+          "data": {
+              "prediction": {
+                  "card": "card1",
+                  "category": "reverse",
+                  "career": "C1",
+                  "love": "L1",
+                  "finance": "F1",
+                  "image": "image_url"
+              }
+          }
+      }
 
 
 Example 
 =======
-The following example is for sun sign aries - 
 
 
 cURL
 ^^^^
 .. code-block:: curl
 
-    curl -d "api_key=YOUR_API_KEY&date=YYYY-MM-DD&sign=aries" -X POST https://divineapi.com/api/1.0/get_daily_horoscope.php
+    curl -d "api_key=YOUR_API_KEY" -X POST https://divineapi.com/api/1.0/get_daily_tarot.php
 
 
 Python
@@ -118,12 +100,12 @@ Python
    import requests
    from requests.structures import CaseInsensitiveDict
 
-   url = "https://divineapi.com/api/1.0/get_daily_horoscope.php"
+   url = "https://divineapi.com/api/1.0/get_daily_tarot.php"
 
    headers = CaseInsensitiveDict()
    headers["Content-Type"] = "application/x-www-form-urlencoded"
 
-   data = "api_key=YOUR_API_KEY&date=YYYY-MM-DD&sign=aries"
+   data = "api_key=YOUR_API_KEY"
 
 
    resp = requests.post(url, headers=headers, data=data)
@@ -135,7 +117,7 @@ Javascript
 ^^^^^^^
 .. code-block:: javascript
 
-   var url = "https://divineapi.com/api/1.0/get_daily_horoscope.php";
+   var url = "https://divineapi.com/api/1.0/get_daily_tarot.php";
 
    var xhr = new XMLHttpRequest();
    xhr.open("POST", url);
@@ -148,7 +130,7 @@ Javascript
          console.log(xhr.responseText);
       }};
 
-   var data = "api_key=YOUR_API_KEY&date=YYYY-MM-DD&sign=aries";
+   var data = "api_key=YOUR_API_KEY";
 
    xhr.send(data);
 
@@ -158,7 +140,7 @@ PHP
 .. code-block:: php
 
    <?php
-    $url = "https://divineapi.com/api/1.0/get_daily_horoscope.php";
+    $url = "https://divineapi.com/api/1.0/get_daily_tarot.php";
 
     $curl = curl_init($url);
     curl_setopt($curl, CURLOPT_URL, $url);
@@ -170,7 +152,7 @@ PHP
     );
     curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
 
-    $data = "api_key=YOUR_API_KEY&date=YYYY-MM-DD&sign=aries";
+    $data = "api_key=YOUR_API_KEY";
 
     curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
 
@@ -186,8 +168,8 @@ jQuery Ajax
 
     $.ajax({
    type:'POST',
-   url:'https://divineapi.com/api/1.0/get_daily_horoscope.php',
-   data: {api_key:'YOUR_API_KEY', date: 'YYYY-MM-DD', sign:'aries'},
+   url:'https://divineapi.com/api/1.0/get_daily_tarot.php',
+   data: {api_key:'YOUR_API_KEY'},
    success:function(data){
    console.log(data);
    }
@@ -198,7 +180,7 @@ ECMAScript (ES6)
 ^^^^^^
 .. code-block:: javascript
 
-    const URL = 'https://divineapi.com/api/1.0/get_daily_horoscope.php?api_key=YOUR_API_KEY&sign=aries&day=YYYY-MM-DD';
+    const URL = 'https://divineapi.com/api/1.0/get_daily_tarot.php?api_key=YOUR_API_KEY';
     fetch(URL, {
         method: 'POST'
     })
@@ -209,10 +191,11 @@ ECMAScript (ES6)
     });
 
 
+
 License
 =======
 
-2021 Mohammad Azhar
+2021 Divine API
 
 Licensed under the Apache License, Version 2.0 (the "License");
 
