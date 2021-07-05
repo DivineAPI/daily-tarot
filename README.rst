@@ -12,6 +12,8 @@ Start your FREE Trial to get your API KEY,  `https://divineapi.com <https://divi
    :width: 898px
    :alt: divineapi logo
    :align: center
+   
+   
 
 What is Daily Tarot API?
 ==============
@@ -26,6 +28,8 @@ Astrologers, Tarot Readers or Healers can now integrate astrology-related servic
 Why Daily Tarot API?
 ==========
 Divine API puts an end to the search of any developer who is seeking for a Daily Tarot API which covers the aspects of life related to love life, career and money by picking a random card from a deck of 78 unique tarot card with images. 
+
+
 
 Features
 ==========
@@ -214,7 +218,7 @@ Credits
 
 "DivineAPI" was created by `Azhar <https://azhar-spiderdev.github.io/portfolio>`_
 
-Source of horoscope updates - http://divineapi.com/horoscope-api/
+Source of updates - https://divineapi.com/daily-tarot-api
 
 Please feel free to use and adapt this awesome API.
 
