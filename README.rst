@@ -219,8 +219,6 @@ Questions? Suggestions? Feel free to contact me at admin@divineapi.com
 Credits
 =======
 
-"DivineAPI" was created by `Azhar <https://azhar-spiderdev.github.io/portfolio>`_
-
 Source of updates - https://divineapi.com/daily-tarot-api
 
 Please feel free to use and adapt this awesome API.
